@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wave Music Player</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="player">
+    <header class="topbar">
+      <div class="brand"><span class="brand-icon">♫</span><span>WAVE</span></div>
+      <span class="tag">MUSIC PLAYER</span>
+    </header>
+
+    <section class="cover-wrap">
+      <div class="cover" id="cover">
+        <div class="cover-orbit orbit-one"></div>
+        <div class="cover-orbit orbit-two"></div>
+        <div class="cover-note">♫</div>
+      </div>
+      <p class="eyebrow">NOW PLAYING</p>
+      <h1 id="song-title">Choose a song</h1>
+      <p class="artist" id="song-artist">Your music, your mood</p>
+    </section>
+
+    <section class="timeline">
+      <div class="progress-track">
+        <input id="progress" type="range" min="0" max="100" value="0" aria-label="Song progress">
+      </div>
+      <div class="time-row"><span id="current-time">0:00</span><span id="duration">0:00</span></div>
+    </section>
+
+    <section class="controls" aria-label="Playback controls">
+      <button class="icon-btn" id="shuffle" title="Shuffle" aria-label="Shuffle">⤨</button>
+      <button class="icon-btn" id="previous" title="Previous song" aria-label="Previous song">⏮</button>
+      <button class="play-btn" id="play" title="Play" aria-label="Play">▶</button>
+      <button class="icon-btn" id="next" title="Next song" aria-label="Next song">⏭</button>
+      <button class="icon-btn" id="repeat" title="Repeat" aria-label="Repeat">↻</button>
+    </section>
+
+    <section class="volume-row">
+      <span aria-hidden="true">🔈</span>
+      <input id="volume" type="range" min="0" max="1" step="0.01" value="0.75" aria-label="Volume">
+      <span aria-hidden="true">🔊</span>
+    </section>
+
+    <section class="playlist-section">
+      <div class="playlist-heading"><h2>Playlist</h2><span id="track-count">3 TRACKS</span></div>
+      <ul id="playlist" class="playlist"></ul>
+    </section>
+    <footer>Made with HTML · CSS · JavaScript</footer>
+  </main>
+  <audio id="audio" preload="metadata"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
